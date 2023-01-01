@@ -86,10 +86,10 @@ const server = () => {
 
 const watch = () => {
     gulp.watch("src/**/*.html", gulp.parallel(html, styles));
-    gulp.watch("src/styles/**/*.scss", gulp.series(styles));
+    gulp.watch("src/**/*.scss", gulp.series(styles));
     gulp.watch("src/scripts/**/*.js", gulp.series(scripts));
     gulp.watch(
-        ["src/fonts/**/*", "src/images/**/*", "src/styles/css/*"],
+        ["src/fonts/**/*", "src/images/**/*"],
         gulp.series(copy)
     );
 };
