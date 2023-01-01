@@ -1,0 +1,12 @@
+@import "./variables";
+@import "./mixins";
+@import "./fonts";
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  margin: unset;
+}
