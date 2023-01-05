@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const nunjucksRender = require("gulp-nunjucks-render");
 const cleanCSS = require("gulp-clean-css");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const purgecss = require("gulp-purgecss");
 const concat = require("gulp-concat");
 const autoprefixer = require("gulp-autoprefixer");
@@ -20,7 +20,7 @@ const html = () => {
         .src("src/*.html")
         .pipe(
             nunjucksRender({
-                path: ["src/modules/"]
+                path: ["src/modules/"],
             })
         )
         .pipe(gulp.dest("build"))
@@ -33,7 +33,7 @@ const styles = () => {
         .pipe(sass().on("error", sass.logError))
         .pipe(
             purgecss({
-                content: ["src/**/*.html"]
+                content: ["src/**/*.html"],
             })
         )
         .pipe(autoprefixer())
@@ -48,15 +48,16 @@ const scripts = () => {
         .src("src/scripts/**/*.js")
         .pipe(
             babel({
-                presets: ["@babel/preset-env"]
+                presets: ["@babel/preset-env"],
             })
         )
         .pipe(terser())
         .pipe(
             rename({
-                suffix: ".min"
+                suffix: ".min",
             })
         )
+        .pipe(concat("index.min.js"))
         .pipe(gulp.dest("build/scripts"))
         .pipe(sync.stream());
 };
@@ -64,12 +65,12 @@ const scripts = () => {
 const copy = () => {
     return gulp
         .src(["src/fonts/**/*", "src/images/**/*"], {
-            base: "src"
+            base: "src",
         })
         .pipe(gulp.dest("build"))
         .pipe(
             sync.stream({
-                once: true
+                once: true,
             })
         );
 };
@@ -79,8 +80,8 @@ const server = () => {
         ui: false,
         notify: false,
         server: {
-            baseDir: "build"
-        }
+            baseDir: "build",
+        },
     });
 };
 
@@ -88,10 +89,7 @@ const watch = () => {
     gulp.watch("src/**/*.html", gulp.parallel(html, styles));
     gulp.watch("src/**/*.scss", gulp.series(styles));
     gulp.watch("src/scripts/**/*.js", gulp.series(scripts));
-    gulp.watch(
-        ["src/fonts/**/*", "src/images/**/*"],
-        gulp.series(copy)
-    );
+    gulp.watch(["src/fonts/**/*", "src/images/**/*"], gulp.series(copy));
 };
 
 exports.html = html;
