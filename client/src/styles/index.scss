@@ -26,6 +26,11 @@ a {
 
 input {
   outline: none;
+  border: none;
+}
+
+figure {
+  margin: unset;
 }
 
 .container {
@@ -62,6 +67,16 @@ input {
 
     &:hover {
       opacity: 0.9;
+    }
+  }
+
+  &--default {
+    font-weight: 500;
+    box-shadow: $smallShadowStroke;
+
+    &:hover {
+      color: $primary;
+      box-shadow: unset;
     }
   }
 }

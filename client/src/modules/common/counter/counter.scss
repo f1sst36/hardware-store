@@ -1,0 +1,105 @@
+@import "../../../styles/variables";
+
+.counter {
+    background-color: $light;
+    border: 1px solid $light-gray;
+    border-radius: 4px;
+    display: flex;
+    transition: $transitionDefault;
+    width: 100%;
+
+    $parent: &;
+
+    &:hover {
+        border-color: $gray;
+    }
+
+    &__button {
+        position: relative;
+        background-color: transparent;
+        border: unset;
+        transition: $transitionDefault;
+        cursor: pointer;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: $primary;
+
+            #{$parent}__sign-line {
+                background-color: $light;
+            }
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: #f3f3f3;
+
+            &:hover {
+                #{$parent}__sign-line {
+                    background-color: $gray;
+                }
+            }
+        }
+    }
+
+    &__sign-line {
+        width: 10px;
+        height: 2px;
+        background-color: $gray;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 4px;
+        transition: $transitionDefault;
+
+        &--vertical {
+            transform: rotateZ(90deg);
+            left: calc(50% - 5px);
+            top: calc(50% - 1px);
+        }
+    }
+
+    &__input {
+        font-size: 16px;
+        line-height: 22px;
+        width: 100%;
+        text-align: center;
+        margin-right: 3px;
+        margin-left: 3px;
+        border-bottom: 1px solid transparent;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        -moz-appearance: textfield;
+
+        &:focus {
+            border-bottom-color: $gray;
+        }
+    }
+
+    &--normal {
+        #{$parent}__button {
+            padding: 20px;
+        }
+
+        #{$parent}__input {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+    }
+
+    &--big {
+        #{$parent}__button {
+            padding: 20px 30px;
+        }
+
+        #{$parent}__input {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+    }
+}

@@ -3,7 +3,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  box-shadow: $header-shadow;
+  box-shadow: $headerShadow;
 
   &__top {
     background-color: $dark;

@@ -1,0 +1,43 @@
+<figure class="product-card product-card--card product-card--promo">
+    <a href="#">
+        <div class="product-card__image"
+             style="background-image: url('images/catalog/product-example.png')">
+            <h4 class="product-card__hit-stick hidden">Хит</h4>
+            <h4 class="product-card__promo-stick hidden">Акция</h4>
+        </div>
+    </a>
+    <div class="product-card__body">
+        <div>
+            <div class="product-card__info">
+                <div class="product-card__name-wrapper">
+                    <span class="product-card__name">Product name</span>
+                </div>
+                <span class="product-card__category">Product category</span>
+                <span class="product-card__sale-state">В наличии</span>
+            </div>
+            <div class="product-card__price-wrapper product-card__price-wrapper--card">
+                <div class="product-card__price">
+                    <span class="product-card__price__label">Цена:</span>
+                    <span class="product-card__price__value">30 000 Р</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card__cart hidden">
+            <i class="iconfont iconfont-icon-cart"></i>
+        </div>
+
+        <div class="product-card__buy-counter">
+<!--            <div class="product-card__price product-card__price&#45;&#45;inline hidden">-->
+<!--                <span class="product-card__price__label">Цена:</span>-->
+<!--                <span class="product-card__price__value">@@price Р</span>-->
+<!--            </div>-->
+            <div class="product-card__buy-counter__counter-wrapper">
+                {% include "common/counter/counter.html" %}
+            </div>
+            <button class="button button--flat">
+                В корзину
+            </button>
+        </div>
+    </div>
+</figure>

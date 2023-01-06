@@ -3,8 +3,19 @@ $dark: #333333;
 $light: #fff;
 $gray: #999999;
 $light-gray: #e2e2e2;
+$error: #db2b10;
+$success: #21c68d;
 
-
-$header-shadow: 0 3px 9px -3px #d9d8d9;
+$menuShadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+$cardShadow: 4px 10px 13px rgba(101, 101, 101, 0.13);
+$smallShadowStroke: 0px 2px 2px rgba(0, 0, 0, 0.15);
+$headerShadow: 0 3px 9px -3px #d9d8d9;
 
 $transitionDefault: all 0.15s ease;
+
+$breakpoints: (
+        xs: 0,
+        sm: 376px,
+        md: 768px,
+        lg: 1307px,
+);

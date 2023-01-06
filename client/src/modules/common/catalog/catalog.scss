@@ -1,0 +1,25 @@
+@import "src/styles/mixins";
+
+.catalog {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+
+  @include md {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+
+    @include sm {
+      grid-template-columns: 1fr;
+    }
+  }
+}
