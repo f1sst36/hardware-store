@@ -6,4 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: "#main-slider-button-prev",
         },
     });
+
+    new Swiper("#categories__slider", {
+        loop: true,
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        grabCursor: true,
+    });
 })

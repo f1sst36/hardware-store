@@ -1,0 +1,43 @@
+@import "src/styles/variables";
+
+.categories {
+  overflow-x: hidden;
+
+  & > .container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &__info {
+    font-size: 16px;
+    line-height: 28px;
+
+    &-title {
+      font-size: 26px;
+    }
+
+    a {
+      border-bottom: 1px solid $dark;
+      transition: $transitionDefault;
+
+      &:hover {
+        color: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+
+  &__slider {
+    max-width: 1600px;
+    &.swiper {
+      padding-top: unset;
+    }
+    .swiper-slide {
+      width: max-content;
+      user-select: none;
+    }
+  }
+}

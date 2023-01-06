@@ -3,15 +3,41 @@
 
     </aside>
     <div class="catalog__main">
-        <div>
-
+        <div class="catalog__header">
+            <div class="catalog__header-view">
+                <svg id="view-card-button" class="active" width="18" height="18" viewBox="0 0 18 18" fill="#808285"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <rect width="7" height="7"></rect>
+                    <rect x="11" width="7" height="7"></rect>
+                    <rect y="11" width="7" height="7"></rect>
+                    <rect x="11" y="11" width="7" height="7"></rect>
+                </svg>
+                <svg id="view-inline-button" width="22" height="17" viewBox="0 0 22 17" fill="#808285"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="2"></rect>
+                    <rect y="5" width="22" height="2"></rect>
+                    <rect y="10" width="22" height="2"></rect>
+                    <rect y="15" width="22" height="2"></rect>
+                </svg>
+            </div>
+            <div class="catalog__header-sort">
+                <span>Сортировать по:</span>
+                <a href="#">А-Я</a>
+                <a href="#">Акции</a>
+                <a class="active" href="#">Лучшая цена</a>
+            </div>
         </div>
-        <div class="catalog__list">
+        <div class="catalog__list catalog__list--card">
+            {% include "common/product-card/product-card.html" %}
+            {% include "common/product-card/product-card.html" %}
+            {% include "common/product-card/product-card.html" %}
+            {% include "common/product-card/product-card.html" %}
             {% include "common/product-card/product-card.html" %}
             {% include "common/product-card/product-card.html" %}
             {% include "common/product-card/product-card.html" %}
             {% include "common/product-card/product-card.html" %}
             {% include "common/product-card/product-card.html" %}
         </div>
+        {% include "common/pagination/pagination.html" %}
     </div>
 </section>

@@ -31,11 +31,11 @@ const styles = () => {
     return gulp
         .src("src/**/*.scss")
         .pipe(sass().on("error", sass.logError))
-        .pipe(
-            purgecss({
-                content: ["src/**/*.html"],
-            })
-        )
+        // .pipe(
+        //     purgecss({
+        //         content: ["src/**/*.html"],
+        //     })
+        // )
         .pipe(autoprefixer())
         .pipe(cleanCSS())
         .pipe(concat("index.min.css"))

@@ -12,13 +12,62 @@
 
   }
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 32px 0;
+
+    &-view {
+      display: flex;
+      gap: 28px;
+
+      #view-card-button, #view-inline-button {
+        cursor: pointer;
+
+        &.active {
+          fill: $success;
+          cursor: default;
+        }
+      }
+    }
+
+    &-sort {
+      span {
+        font-size: 16px;
+        line-height: 22px;
+        margin-right: 10px;
+      }
+      a {
+        font-size: 16px;
+        line-height: 22px;
+        color: $gray;
+        border-bottom: 1px solid $gray;
+        margin-left: 10px;
+
+        &.active {
+          color: $success;
+          border-color: $success;
+        }
+      }
+    }
+  }
+
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 20px;
-    row-gap: 30px;
+    margin-bottom: 90px;
 
-    @include sm {
+    &--card {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
+      row-gap: 30px;
+
+      @include sm {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &--inline {
+      row-gap: 20px;
       grid-template-columns: 1fr;
     }
   }
