@@ -1,0 +1,49 @@
+@import "../../../styles/variables";
+
+.swiper {
+  padding-top: 40px;
+  position: relative;
+
+  &:hover {
+    #main-slider-button-next, #main-slider-button-prev {
+      opacity: 1;
+    }
+  }
+
+  .swiper-wrapper {
+    .swiper-slide {
+      user-select: none;
+      img {
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+  }
+
+  #main-slider-button-next {
+    transform: rotateZ(-90deg);
+    right: 40px;
+    top: 50%;
+  }
+
+  #main-slider-button-prev {
+    transform: rotateZ(90deg);
+    left: 40px;
+    top: 50%;
+  }
+
+  #main-slider-button-next, #main-slider-button-prev {
+    transition: $transitionDefault;
+    opacity: 0;
+    z-index: 10;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
