@@ -1,8 +1,7 @@
 <section class="catalog container">
-    <aside class="filters">
-
-    </aside>
+    {% include "common/filters/filters.html" %}
     <div class="catalog__main">
+        <h2 class="catalog__main-title">Каталог</h2>
         <div class="catalog__header">
             <div class="catalog__header-view">
                 <svg id="view-card-button" class="active" width="18" height="18" viewBox="0 0 18 18" fill="#808285"
@@ -19,6 +18,7 @@
                     <rect y="10" width="22" height="2"></rect>
                     <rect y="15" width="22" height="2"></rect>
                 </svg>
+                <span>Найдено 310 наименований</span>
             </div>
             <div class="catalog__header-sort">
                 <span>Сортировать по:</span>
@@ -38,6 +38,8 @@
             {% include "common/product-card/product-card.html" %}
             {% include "common/product-card/product-card.html" %}
         </div>
-        {% include "common/pagination/pagination.html" %}
+        <div class="catalog__pagination">
+            {% include "common/pagination/pagination.html" %}
+        </div>
     </div>
 </section>

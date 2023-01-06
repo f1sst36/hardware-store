@@ -1,0 +1,105 @@
+@import "src/styles/variables";
+
+.filters {
+  a {
+    display: block;
+  }
+
+  &__categories {
+    &-list {
+      display: flex;
+      flex-direction: column;
+
+      .relative {
+        position: relative;
+      }
+    }
+
+    &-item {
+      border-bottom: 1px solid $light-gray;
+      padding: 12px 20px;
+      transition: $transitionDefault;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 500;
+
+      $item: &;
+
+      &:hover {
+        background-color: $primary;
+        color: $light;
+
+        & + div {
+          visibility: visible;
+          opacity: 1;
+          transform: translateX(100%);
+        }
+      }
+
+      &--parent {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+
+        &:hover {
+          svg{
+            transform: rotateZ(-90deg) translateY(10px);
+            path {
+              fill: $light;
+            }
+          }
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          transform: rotateZ(-90deg);
+          transition: all 0.3s ease-in-out;
+
+          path {
+            transition: $transitionDefault;
+          }
+        }
+      }
+
+      &__subcategories {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(calc(100% - 20px));
+        z-index: 25;
+        background-color: $light;
+        border: 1px solid $primary;
+        padding: 16px;
+        box-shadow: $cardShadow;
+
+        &:hover {
+          visibility: visible;
+          opacity: 1;
+          transform: translateX(100%);
+        }
+
+        &-list {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &-item {
+          border-bottom: 1px solid $light-gray;
+          padding: 12px 20px;
+          transition: $transitionDefault;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 500;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
