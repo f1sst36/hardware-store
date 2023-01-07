@@ -1,33 +1,26 @@
 @font-face {
-  font-family: 'Raleway';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/Raleway-Regular.ttf') format('truetype');
   font-display: swap;
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
+  url("../fonts/Inter-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Raleway';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/Raleway-Medium.ttf') format('truetype');
   font-display: swap;
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"),
+  url("../fonts/Inter-Medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Raleway';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/Raleway-Bold.ttf') format('truetype');
   font-display: swap;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"),
+  url("../fonts/Inter-Bold.woff") format("woff");
 }
-
-//@font-face {
-//  font-family: 'Work Sans';
-//  font-style: normal;
-//  font-weight: 500;
-//  src: url('../fonts/work-sans-medium.woff2') format('woff2'),
-//  url('../fonts/work-sans-medium.woff') format('woff'),
-//  url('../fonts/work-sans-medium.ttf') format('truetype');
-//  font-display: swap;
-//}

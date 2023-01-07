@@ -1,0 +1,37 @@
+<section class="promo">
+    <div class="container">
+        <div class="promo__info">
+            <h2 class="promo__info-title">У нас вы найдете все для дома и ремонта!</h2>
+            <p>
+                Черепица, профнастил, смеси, кровля, пенопласт, ОСБ... <br/>В наличии и под заказ!
+            </p>
+            <a href="#">Посмотреть все</a>
+        </div>
+        <div class="promo__slider">
+            <div id="promo__slider" class="swiper">
+                <div class="swiper-wrapper">
+                    {% set variant = 'preview' %}
+                    {% set tag = 'promo' %}
+                    <div class="swiper-slide">
+                        {% include 'common/product-card/product-card.html' %}
+                    </div>
+                    <div class="swiper-slide">
+                        {% include 'common/product-card/product-card.html' %}
+                    </div>
+                    <div class="swiper-slide">
+                        {% include 'common/product-card/product-card.html' %}
+                    </div>
+                    <div class="swiper-slide">
+                        {% include 'common/product-card/product-card.html' %}
+                    </div>
+                    <div class="swiper-slide">
+                        {% include 'common/product-card/product-card.html' %}
+                    </div>
+                    <div class="swiper-slide">
+                        {% include 'common/product-card/product-card.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

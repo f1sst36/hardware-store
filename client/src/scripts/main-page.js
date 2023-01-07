@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    new Swiper("#categories__slider", {
+    new Swiper("#promo__slider", {
         loop: true,
         slidesPerView: "auto",
         spaceBetween: 20,

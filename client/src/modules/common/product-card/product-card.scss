@@ -246,12 +246,20 @@
         border-radius: 8px;
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
         transition: $transitionDefault;
+        width: 300px;
+        height: 300px;
 
         &:hover {
             box-shadow: $hoverShadow;
         }
 
         &>a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+
             &:after {
                 content: '';
                 position: absolute;
@@ -270,9 +278,8 @@
             background-position: center;
             background-origin: content-box;
             background-color: $light;
-            padding: 20px;
             width: 100%;
-            height: 160px;
+            height: 100%;
         }
 
         #{$parent}__body {
@@ -280,16 +287,38 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 10px 5px;
-            height: 90px;
-            background-color: $light;
+            padding: 8px;
             box-shadow: $smallShadowStroke;
             flex-wrap: wrap;
+            background-color: rgba(255, 255, 255, 0.5);
+
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100%;
+            border-radius: 4px;
         }
 
         #{$parent}__name {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        #{$parent}__price-wrapper {
+            margin-top: unset;
+        }
+
+        #{$parent}__price {
             font-size: 16px;
             line-height: 22px;
+            height: unset;
+            display: block;
+
+            &__label {
+                display: none;
+            }
         }
 
         #{$parent}__buy-counter {
@@ -343,7 +372,6 @@
         gap: 8px;
         height: $priceHeight;
         font-size: 18px;
-        font-weight: 500;
     }
 
     &__buy-counter {
@@ -390,7 +418,7 @@
         transform: rotate(-45deg);
         text-align: center;
         left: -61px;
-        top: 0px;
+        top: 0;
 
         @include md-only {
             font-size: 16px;
@@ -433,5 +461,19 @@
 
     .product-card__price--inline {
         display: block;
+    }
+}
+
+.product-card--preview {
+    &.product-card--promo {
+        .product-card__promo-stick {
+            display: block;
+        }
+    }
+
+    &.product-card--hit {
+        .product-card__hit-stick {
+            display: block;
+        }
     }
 }

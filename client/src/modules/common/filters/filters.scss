@@ -6,9 +6,16 @@
   }
 
   &__categories {
+    &-title {
+      font-size: 26px;
+      line-height: 36px;
+      margin: unset;
+    }
+
     &-list {
       display: flex;
       flex-direction: column;
+      margin-top: 32px;
 
       .relative {
         position: relative;
@@ -42,7 +49,7 @@
         align-items: center;
 
         &:hover {
-          svg{
+          svg {
             transform: rotateZ(-90deg) translateY(10px);
             path {
               fill: $light;

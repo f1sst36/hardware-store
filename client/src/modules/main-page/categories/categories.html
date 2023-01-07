@@ -1,41 +1,14 @@
 <section class="categories">
     <div class="container">
-        <div class="categories__info">
-            <h2 class="categories__info-title">У нас вы найдете все для дома и ремонта!</h2>
-            <p>
-                Черепица, профнастил, смеси, кровля, пенопласт, ОСБ... <br/>В наличии и под заказ!
-            </p>
-            <a href="#">Посмотреть все</a>
-        </div>
-        <div class="categories__slider">
-            <div id="categories__slider" class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        {% include 'common/category-card/category-card.html' %}
-                    </div>
-                    <div class="swiper-slide">
-                        {% include 'common/category-card/category-card.html' %}
-                    </div>
-                    <div class="swiper-slide">
-                        {% include 'common/category-card/category-card.html' %}
-                    </div>
-                    <div class="swiper-slide">
-                        {% include 'common/category-card/category-card.html' %}
-                    </div>
-                    <div class="swiper-slide">
-                        {% include 'common/category-card/category-card.html' %}
-                    </div>
-                    <div class="swiper-slide">
-                        {% include 'common/category-card/category-card.html' %}
-                    </div>
-                    <div class="swiper-slide">
-                        {% include 'common/category-card/category-card.html' %}
-                    </div>
-                    <div class="swiper-slide">
-                        {% include 'common/category-card/category-card.html' %}
-                    </div>
-                </div>
-            </div>
+        <h2 class="categories-title">Категории товаров</h2>
+        <div class="categories__grid">
+            {% include 'common/category-card/category-card.html' %}
+            {% include 'common/category-card/category-card.html' %}
+            {% include 'common/category-card/category-card.html' %}
+            {% include 'common/category-card/category-card.html' %}
+            {% include 'common/category-card/category-card.html' %}
+            {% include 'common/category-card/category-card.html' %}
+            {% include 'common/category-card/category-card.html' %}
         </div>
     </div>
 </section>
