@@ -1,0 +1,43 @@
+@import 'src/styles/variables';
+
+.layout-up-button {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  border-radius: 50%;
+  padding: 10px 14px;
+  background-color: $light;
+  box-shadow: $menuShadow;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  border: 2px solid $primary;
+  transition: all 0.3s linear;
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
+
+  &:hover {
+    box-shadow: unset;
+
+    img {
+      transform: rotateZ(180deg) translateY(4px);
+    }
+  }
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    transform: rotateZ(180deg);
+    margin-top: 8px;
+    transition: $transitionDefault;
+  }
+}

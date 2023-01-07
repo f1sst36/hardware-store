@@ -42,8 +42,16 @@ button {
 
 .container {
   max-width: 1350px;
-  padding: 0 15px;
+  padding: 0 $container-padding;
   margin: 0 auto;
+
+  @include md {
+    padding: 0 $container-md-padding;
+  }
+
+  @include sm {
+    padding: 0 $container-sm-padding;
+  }
 }
 
 .text-field {

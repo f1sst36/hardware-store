@@ -1,0 +1,48 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.breadcrumbs {
+  @include hiddenScrollbar();
+  font-size: 14px;
+  line-height: 22px;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  list-style-type: none;
+  margin-top: 20px;
+
+  @include md {
+    white-space: nowrap;
+    margin: 0 (-$container-md-padding);
+    padding: 0 $container-md-padding;
+  }
+
+  @include sm {
+    margin: 0 (-$container-sm-padding);
+    padding: 0 $container-sm-padding;
+  }
+
+  &>*:not(:last-child) {
+    color: $dark;
+    margin-right: 4px;
+
+    &:after {
+      content: "/";
+      color: $dark;
+      margin-left: 4px;
+    }
+  }
+
+  &>*:last-child {
+    color: $gray;
+    pointer-events: none;
+  }
+
+  a {
+    transition: $transitionDefault;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
