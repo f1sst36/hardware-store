@@ -14,12 +14,30 @@
     color: $light;
 
     &-call {
-      span, a {
-        font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      span {
+        font-size: 14px;
       }
       a {
+        font-size: 16px;
         color: $light;
-        font-weight: 700;
+        font-weight: 500;
+      }
+    }
+
+    &-address {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      span {
+        font-size: 14px;
+      }
+      a {
+        font-size: 16px;
+        font-weight: 500;
       }
     }
   }

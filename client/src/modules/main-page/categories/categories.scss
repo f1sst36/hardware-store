@@ -1,18 +1,48 @@
+@import "src/styles/variables";
+
 .categories {
+  $hoverShadow: 4px 10px 13px rgba(101, 101, 101, 0.13);
+
   &-title {
     font-size: 26px;
     line-height: 32px;
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto-fit, 1fr);
-    column-gap: 20px;
-    row-gap: 20px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    & > .category-card {
-      padding-top: 100%;
+  &__item {
+    box-shadow: $smallShadowStroke;
+    transition: $transitionDefault;
+    border-radius: 6px;
+
+    &:hover {
+      box-shadow: $hoverShadow;
+    }
+
+    &-header {
+      background-color: $very-light-gray;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__title {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+      }
+
+      &__hidden-button {
+        font-size: 14px;
+      }
+    }
+
+    &-body {
+      padding: 20px;
     }
   }
 }
