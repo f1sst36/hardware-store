@@ -21,12 +21,12 @@ enum ProductPromoState {
 model Product {
   id          Int               @id @default(autoincrement())
   name        String            @db.VarChar(80)
-  category    Category          @relation(fields: [categoryId], references: [id])
+  category    Category          @relation(name: "Category", fields: [categoryId], references: [id])
   categoryId  Int
   description String
   mainImage   String
-  images      String[]?
-  price       Number
+  images      String[]
+  price       Decimal
   orderState  ProductOrderState
   promoState  ProductPromoState @default(NONE)
   createdAt   DateTime          @default(now())
@@ -36,8 +36,9 @@ model Category {
   id          Int        @id @default(autoincrement())
   name        String     @unique @db.VarChar(50)
   description String?
-  products    Product[]?
-  parent      Category?  @relation(fields: [parentId], references: [id])
+  products    Product[]  @relation("Category")
   parentId    Int?
+  parent      Category?  @relation(name: "ParentCategory", fields: [parentId], references: [id])
+  childrens   Category[] @relation("ParentCategory")
   createdAt   DateTime   @default(now())
 }
