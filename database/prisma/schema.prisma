@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ProductOrderState {
+  IN_STOCK
+  ON_ORDER
+}
+
+enum ProductPromoState {
+  PROMO
+  HIT
+  NONE
+}
+
+model Product {
+  id          Int               @id @default(autoincrement())
+  name        String            @db.VarChar(80)
+  category    Category          @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  description String
+  mainImage   String
+  images      String[]?
+  price       Number
+  orderState  ProductOrderState
+  promoState  ProductPromoState @default(NONE)
+  createdAt   DateTime          @default(now())
+}
+
+model Category {
+  id          Int        @id @default(autoincrement())
+  name        String     @unique @db.VarChar(50)
+  description String?
+  products    Product[]?
+  parent      Category?  @relation(fields: [parentId], references: [id])
+  parentId    Int?
+  createdAt   DateTime   @default(now())
+}
