@@ -2,7 +2,7 @@ import {App} from './App'
 import {ProductController} from "./controllers/ProductController";
 
 const app = new App({
-    port: 3000,
+    port: +(process.env.PORT || 3000),
     prefix: "",
     controllers: [new ProductController()],
     models: [],
