@@ -13,31 +13,33 @@
     align-items: center;
     color: $light;
 
-    &-call {
+    &-working-time {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 12px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
       span {
         font-size: 14px;
-      }
-      a {
-        font-size: 16px;
-        color: $light;
-        font-weight: 500;
       }
     }
 
     &-address {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 12px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
 
       span {
         font-size: 14px;
-      }
-      a {
-        font-size: 16px;
-        font-weight: 500;
       }
     }
   }
@@ -152,6 +154,10 @@
       button {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+      }
+
+      &__call {
+        margin-left: 16px;
       }
     }
   }
