@@ -14,6 +14,6 @@ export class ProductController extends CoreController {
     }
 
     private detailProduct(req: Request, res: Response) {
-        return res.json({a: '123'})
+        return res.json({a: '123123123 abc'})
     }
 }

@@ -23,7 +23,7 @@ export class App {
         this.initMiddlewares(appInit.middlewares);
         this.initRoutes(appInit.controllers, appInit.prefix);
 
-        // this.initDataBaseConnection();
+        this.initDataBaseConnection();
         this.initModels(appInit.models);
 
         this.server = require('http').createServer(this.app);
