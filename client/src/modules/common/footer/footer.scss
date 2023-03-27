@@ -1,0 +1,29 @@
+@import 'src/styles/variables';
+
+.footer {
+  background-color: $dark;
+  color: $light;
+  padding: 40px 0;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr 1fr;
+    gap: 20px;
+  }
+
+  &__info {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  &__catalog {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  &__copyright {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
