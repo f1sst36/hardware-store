@@ -12,7 +12,8 @@
     padding: 16px 32px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 12px;
 
     &:first-child {
       padding-left: 0;
