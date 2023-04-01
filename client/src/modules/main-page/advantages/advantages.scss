@@ -1,10 +1,25 @@
 @import "src/styles/variables";
+@import "src/styles/mixins";
 
 .advantages {
   padding: 40px 0;
 
+  @include sm {
+    padding: 20px 0;
+  }
+
+  .container {
+    @include sm {
+      padding: unset;
+    }
+  }
+
   &__items {
     display: flex;
+
+    @include sm {
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -14,22 +29,31 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
+    font-size: 16px;
 
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      padding-right: 0;
+    @include md {
+      font-size: 14px;
+      gap: 8px;
+      padding: 12px 24px;
     }
 
     img {
       width: 48px;
       height: 48px;
+
+      @include md {
+        width: 32px;
+        height: 32px;
+      }
     }
 
     & + & {
       border-left: 1px solid $primary;
+
+      @include sm {
+        border-left: unset;
+        border-top: 1px solid $primary;
+      }
     }
   }
 }

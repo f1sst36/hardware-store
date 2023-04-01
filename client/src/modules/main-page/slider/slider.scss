@@ -1,10 +1,21 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .main-slider {
   position: relative;
 
+  &.container {
+    @include sm {
+      padding: unset;
+    }
+  }
+
   .swiper {
     padding-top: 40px;
+
+    @include sm {
+      padding-top: 20px;
+    }
 
     .swiper-wrapper {
       .swiper-slide {
@@ -22,12 +33,20 @@
     transform: rotateZ(-90deg);
     right: -32px;
     top: 50%;
+
+    @include sm {
+      display: none;
+    }
   }
 
   #main-slider-button-prev {
     transform: rotateZ(90deg);
     left: -32px;
     top: 50%;
+
+    @include sm {
+      display: none;
+    }
   }
 
   #main-slider-button-next, #main-slider-button-prev {
