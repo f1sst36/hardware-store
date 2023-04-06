@@ -132,15 +132,22 @@
 
     &-search {
       display: flex;
+      gap: 12px;
 
-      input {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-      }
+      &__cart {
+        position: relative;
+        width: 60px;
+        height: 42px;
+        padding: unset;
 
-      button {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        & > img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 24px;
+          height: 24px;
+        }
       }
 
       &__call {
