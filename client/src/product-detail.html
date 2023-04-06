@@ -8,8 +8,9 @@
         <a href="/catalog.html">{category name}</a>
         <a href="#">{product name}</a>
     </div>
-
-    {% include 'product-detail/info/info.html' %}
 </div>
+
+{% include 'product-detail/info/info.html' %}
+{% include 'product-detail/description/description.html' %}
 
 {% endblock %}

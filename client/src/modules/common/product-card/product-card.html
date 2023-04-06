@@ -1,7 +1,7 @@
 <figure class="product-card product-card--{{ variant }} product-card--{{ tag }}">
     <a href="/product-detail.html">
         <div class="product-card__image"
-             style="background-image: url('images/catalog/product-example.png')">
+             style="background-image: url('/images/catalog/product-example.png')">
             <h4 class="product-card__hit-stick hidden">Хит</h4>
             <h4 class="product-card__promo-stick hidden">Акция</h4>
         </div>
@@ -27,6 +27,7 @@
             <i class="iconfont iconfont-icon-cart"></i>
         </div>
 
+        {% set variant = 'normal' %}
         <div class="product-card__buy-counter">
             <div class="product-card__buy-counter__counter-wrapper">
                 {% include "common/counter/counter.html" %}

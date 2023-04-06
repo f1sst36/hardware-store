@@ -13,12 +13,12 @@
 
   @include md {
     white-space: nowrap;
-    margin: 0 (-$container-md-padding);
+    margin: 20px (-$container-md-padding);
     padding: 0 $container-md-padding;
   }
 
   @include sm {
-    margin: 0 (-$container-sm-padding);
+    margin: 20px (-$container-sm-padding);
     padding: 0 $container-sm-padding;
   }
 

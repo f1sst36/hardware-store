@@ -1,0 +1,12 @@
+.description {
+  padding: 48px 0;
+  &__title {
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

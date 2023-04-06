@@ -1,16 +1,30 @@
 @import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
 
 .product-info {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 50% 1fr;
   column-gap: 92px;
   margin-top: 32px;
+
+  @include md {
+    column-gap: 48px;
+  }
+
+  @include sm {
+    grid-template-columns: 100%;
+  }
 
   &__header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: max-content max-content;
-    row-gap: 24px;
+    grid-template-rows: max-content max-content max-content;
+    row-gap: 32px;
+    column-gap: 24px;
+
+    @include sm {
+      margin-top: 48px;
+    }
   }
 
   &__title {
@@ -18,12 +32,19 @@
     font-weight: 400;
     grid-column-start: 1;
     grid-column-end: 3;
+
+    @include sm {
+      font-size: 28px;
+    }
   }
 
   &__price-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 8px;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 
   &__price {
@@ -44,8 +65,19 @@
     width: max-content;
   }
 
+  &__counter-wrapper {
+    @include md {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    .counter {
+      height: 100%;
+    }
+  }
+
   &__buy-button {
-    width: max-content;
+    width: 100%;
+    justify-content: center;
     display: flex;
     gap: 12px;
     align-items: center;
@@ -54,6 +86,11 @@
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
+
+    @include md {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
 
     & > img {
       width: 26px;
