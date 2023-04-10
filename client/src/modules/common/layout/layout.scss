@@ -41,3 +41,46 @@
     transition: $transitionDefault;
   }
 }
+
+.cart-link {
+  position: fixed;
+  right: 40px;
+  bottom: 110px;
+  border-radius: 50%;
+  padding: 14px;
+  background-color: $light;
+  box-shadow: $menuShadow;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  border: 2px solid $primary;
+  transition: all 0.3s linear;
+
+  &:hover {
+    box-shadow: unset;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    transition: $transitionDefault;
+  }
+
+  &__counter {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: $error;
+    font-size: 10px;
+    line-height: 10px;
+    border-radius: 50%;
+    color: $light;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

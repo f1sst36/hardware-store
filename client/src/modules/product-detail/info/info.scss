@@ -20,7 +20,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content max-content max-content;
     row-gap: 32px;
-    column-gap: 24px;
+    column-gap: 48px;
 
     @include sm {
       margin-top: 48px;
@@ -82,10 +82,9 @@
     gap: 12px;
     align-items: center;
     background-color: $success;
-    padding: 18px 32px;
+    padding: 12px 32px;
     font-size: 18px;
     font-weight: 600;
-    text-transform: uppercase;
 
     @include md {
       grid-column-start: 1;
