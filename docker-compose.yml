@@ -30,7 +30,7 @@ services:
 
   standalone:
     build:
-      context: ./app
+      context: ./
       dockerfile: Dockerfile
     container_name: standalone
     ports:

@@ -1,4 +1,4 @@
-FROM node:18.12.1
+FROM node:18.15.0
 
 WORKDIR /app
 
@@ -6,12 +6,10 @@ COPY ["package.json", "package-lock.json", "tsconfig.json", ".env", "./"]
 
 COPY . .
 
-RUN npm install
-
-RUN npx prisma generate
-
-RUN npx prisma migrate
-
 EXPOSE 3000
 
-CMD npm run dev
+RUN npm install
+
+CMD npx prisma generate --schema=./src/database/prisma/schema.prisma && \
+    npx prisma migrate dev --schema=./src/database/prisma/schema.prisma && \
+    npm run dev
