@@ -1,7 +1,7 @@
 import {App} from './App'
 import {ProductController} from "./controllers/ProductController";
 
-const app = new App({
+export const app = new App({
     port: +(process.env.PORT || 3000),
     prefix: "",
     controllers: [new ProductController()],

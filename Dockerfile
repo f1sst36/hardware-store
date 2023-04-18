@@ -10,6 +10,6 @@ EXPOSE 3000
 
 RUN npm install
 
-CMD npx prisma generate --schema=./src/database/prisma/schema.prisma && \
-    npx prisma migrate dev --schema=./src/database/prisma/schema.prisma && \
+CMD npx prisma db push --schema=./src/database/prisma/schema.prisma && \
+    npx prisma generate --schema=./src/database/prisma/schema.prisma && \
     npm run dev

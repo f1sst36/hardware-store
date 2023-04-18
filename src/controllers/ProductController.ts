@@ -1,5 +1,6 @@
 import {CoreController} from "./CoreController";
 import express, {Request, Response, Router} from "express";
+import {app} from "../index";
 
 export class ProductController extends CoreController {
     constructor() {
@@ -13,7 +14,15 @@ export class ProductController extends CoreController {
         router.get(this.prefix + "/", this.detailProduct);
     }
 
-    private detailProduct(req: Request, res: Response) {
-        return res.json({a: '123123123a abc'})
+    private async detailProduct(req: Request, res: Response) {
+        const newCategory = await app.prismaClient.category.create({
+            data: {
+                name: 'Category 1.' + Math.random(),
+                description: 'some test description',
+                createdAt: new Date()
+            },
+        })
+
+        return res.json(newCategory)
     }
 }

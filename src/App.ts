@@ -1,14 +1,15 @@
 import {Application, Response} from "express";
 import express from 'express';
 import path from "path";
-import {PrismaClient} from "prisma/prisma-client/scripts/default-index";
+import { PrismaClient } from '@prisma/client'
+import { type PrismaClient as PrismaClientType } from "prisma/prisma-client/scripts/default-index";
 
 export class App {
     public app: Application;
     public port: number;
     public server: any;
 
-    public prismaClient: PrismaClient;
+    public prismaClient: PrismaClientType;
 
     constructor(appInit: {
         port: number;
