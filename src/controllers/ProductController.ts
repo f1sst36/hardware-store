@@ -15,7 +15,7 @@ export class ProductController extends CoreController {
     }
 
     private async detailProduct(req: Request, res: Response) {
-        const newCategory = await app.prismaClient.category.create({
+        await app.prismaClient.category.create({
             data: {
                 name: 'Category 1.' + Math.random(),
                 description: 'some test description',
@@ -23,6 +23,8 @@ export class ProductController extends CoreController {
             },
         })
 
-        return res.json(newCategory)
+        const allCategories = await app.prismaClient.category.findMany()
+
+        return res.json(allCategories)
     }
 }
