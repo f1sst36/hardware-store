@@ -47,7 +47,6 @@ export class App {
     }
 
     private initDataBaseConnection() {
-        console.log(process.env.DATABASE_URL)
         this.prismaClient = new PrismaClient()
     }
 
