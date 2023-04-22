@@ -17,13 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const buyButton = document.getElementById('buy-button')
-    if(!buyButton) return
+    if (!buyButton) {
+        return
+    }
 
     buyButton.addEventListener('click', () => {
         const counterInput = document.querySelector('*[data-textfield-type="counter"] input')
         const itemsCount = counterInput.value || 1
-        Cookies.set('cartProductIds', JSON.stringify([1, 2, 3]))
-        console.log(JSON.parse(Cookies.get('cartProductIds')))
+
+        const cartProducts = JSON.parse(Cookies.get('cartProducts') || '[]')
+
+        cartProducts.push({
+            productId: buyButton.getAttribute('data-product-id'),
+            productCount: itemsCount
+        })
+
+        Cookies.set('cartProducts', JSON.stringify(cartProducts))
+        console.log(JSON.parse(Cookies.get('cartProducts')))
+
+        buyButton.innerText = 'Добавлено'
+        buyButton.disabled = true
         // let cartProductIds = null
         // try {
         //     cartProductIds = JSON.parse(localStorage.getItem('cartProductIds'))
