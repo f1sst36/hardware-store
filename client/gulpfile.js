@@ -29,7 +29,7 @@ const html = () => {
 
 const styles = () => {
     return gulp
-        .src("src/**/*.scss")
+        .src("src/**/*.*css")
         .pipe(sass().on("error", sass.logError))
         // .pipe(
         //     purgecss({

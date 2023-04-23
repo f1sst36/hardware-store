@@ -35,17 +35,18 @@ document.addEventListener('DOMContentLoaded', () => {
         Cookies.set('cartProducts', JSON.stringify(cartProducts))
         console.log(JSON.parse(Cookies.get('cartProducts')))
 
-        buyButton.innerText = 'Добавлено'
-        buyButton.disabled = true
-        // let cartProductIds = null
-        // try {
-        //     cartProductIds = JSON.parse(localStorage.getItem('cartProductIds'))
-        // }catch(e) {}
-        //
-        // if(!cartProductIds) {
-        //     cartProductIds = []
-        // }
-        //
-        // cartProductIds.push(productId)
+        // buyButton.innerText = 'Добавлено'
+        // buyButton.disabled = true
+        console.log(123)
+        const toast = new Notify ({
+            // title: 'Товар добавлен в корзину',
+            text: 'Товар добавлен в корзину',
+            autoclose: true,
+            autotimeout: 5000,
+            status: 'success',
+            effect: 'slide',
+            speed: 300,
+            showIcon: true,
+        })
     })
 })

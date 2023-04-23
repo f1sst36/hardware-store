@@ -1,5 +1,12 @@
 @import 'src/styles/variables';
 
+.layout__main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 1fr max-content;
+}
+
 .layout-up-button {
   position: fixed;
   right: 40px;

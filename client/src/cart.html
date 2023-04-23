@@ -1,0 +1,17 @@
+{% extends 'common/layout/layout.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="breadcrumbs">
+        <a href="/index.html">Главная</a>
+        <a href="/catalog.html">Каталог</a>
+        <a href="#">Корзина</a>
+    </div>
+    <div>
+        {% include 'cart/product-list/product-list.html' %}
+        {% include 'cart/order/order.html' %}
+    </div>
+</div>
+
+
+{% endblock %}

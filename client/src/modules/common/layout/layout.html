@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="styles/index.min.css">
 </head>
 <body>
-    {% include 'common/header/header.html' %}
+    <main class="layout__main">
+        {% include 'common/header/header.html' %}
 
-    {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
-    {% include 'common/footer/footer.html' %}
+        {% include 'common/footer/footer.html' %}
+    </main>
 
-    <a id="cart-link" class="cart-link">
+
+    <a href="/cart.html" id="cart-link" class="cart-link">
         <div class="cart-link__counter"><span>9+</span></div>
         <img src="images/icons/cart.svg" alt="Корзина">
     </a>
