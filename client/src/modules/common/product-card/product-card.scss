@@ -217,7 +217,7 @@
             row-gap: 10px;
             align-self: flex-end;
             column-gap: 15px;
-            width: 275px;
+            width: 175px;
 
             @include sm {
                 display: none;
@@ -377,7 +377,7 @@
     &__buy-counter {
         transition: $transitionDefault;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         column-gap: 16px;
         position: relative;
         top: 12px;
