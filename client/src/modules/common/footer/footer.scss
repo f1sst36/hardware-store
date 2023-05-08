@@ -1,15 +1,24 @@
 @import 'src/styles/variables';
+@import 'src/styles/mixins';
 
 .footer {
   background-color: $dark;
   color: $light;
   padding: 40px 0 20px 0;
 
+  @include sm {
+    padding: 20px 0 20px 0;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: 1fr auto;
     gap: 20px;
+
+    @include sm {
+      grid-auto-rows: 1fr auto max-content;
+    }
   }
 
   &__info {
@@ -19,6 +28,11 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    @include sm {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
 
     & > * {
       width: max-content;
@@ -33,6 +47,11 @@
   &__catalog {
     grid-column-start: 2;
     grid-column-end: 4;
+
+    @include sm {
+      grid-column-start: unset;
+      grid-column-end: unset;
+    }
 
     display: grid;
     grid-template-columns: repeat(3, max-content);
