@@ -1,8 +1,15 @@
+@import 'src/styles/mixins';
+
 .cart {
   &__main {
     display: grid;
     grid-template-columns: 1fr 300px;
     column-gap: 48px;
     padding-top: 48px;
+
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
   }
 }
