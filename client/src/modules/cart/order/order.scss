@@ -1,0 +1,24 @@
+@import 'src/styles/variables';
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: $very-light-gray;
+  padding: 24px;
+  height: max-content;
+  border-radius: 8px;
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  &__description {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
