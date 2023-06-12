@@ -8,8 +8,10 @@
     padding-top: 48px;
 
     @include sm {
-      grid-template-columns: 1fr;
+      padding: 24px 0;
+      grid-template-columns: 100%;
       grid-template-rows: auto auto;
+      grid-row-gap: 24px;
     }
   }
 }
