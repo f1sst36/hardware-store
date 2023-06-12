@@ -7,7 +7,8 @@
   margin-top: 32px;
 
   @include md {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
+    margin-top: 16px;
   }
 
   .filters {
@@ -15,6 +16,10 @@
   }
 
   &__main {
+    @include sm {
+      margin-top: 32px;
+    }
+
     &-title {
       font-size: 26px;
       line-height: 36px;
@@ -27,6 +32,11 @@
     justify-content: space-between;
     margin: 32px 0;
 
+    @include sm {
+      flex-direction: column;
+      gap: 16px;
+    }
+
     &-view {
       display: flex;
       gap: 28px;
@@ -34,6 +44,10 @@
       span {
         font-size: 16px;
         font-weight: 500;
+
+        @include sm {
+          justify-self: flex-end;
+        }
       }
 
       #view-card-button, #view-inline-button {
@@ -70,6 +84,10 @@
   &__list {
     display: grid;
     margin-bottom: 90px;
+
+    @include sm {
+      margin-bottom: 32px;
+    }
 
     &--card {
       grid-template-columns: repeat(3, 1fr);

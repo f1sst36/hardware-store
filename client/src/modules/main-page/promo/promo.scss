@@ -12,7 +12,7 @@
     padding-bottom: 40px;
 
     @include sm {
-      grid-template-columns: 1fr;
+      grid-template-columns: 100%;
     }
   }
 
@@ -44,11 +44,13 @@
 
     @include sm {
       margin-left: -$container-sm-padding;
+      margin-right: -$container-sm-padding;
     }
 
     .swiper {
       @include sm {
         padding-left: $container-sm-padding;
+        margin-right: -$container-sm-padding;
       }
     }
 

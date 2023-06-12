@@ -1,4 +1,5 @@
 @import "src/styles/variables";
+@import "src/styles/mixins";
 
 .filters {
   a {
@@ -32,6 +33,10 @@
 
       $item: &;
 
+      @include sm {
+        font-size: 16px;
+      }
+
       &:hover {
         background-color: $primary;
         color: $light;
@@ -63,6 +68,10 @@
           transform: rotateZ(-90deg);
           transition: all 0.3s ease-in-out;
 
+          @include sm {
+            display: none;
+          }
+
           path {
             transition: $transitionDefault;
           }
@@ -83,6 +92,16 @@
         padding: 16px;
         box-shadow: $cardShadow;
 
+        @include sm {
+          visibility: visible;
+          opacity: 1;
+          transform: unset;
+          position: static;
+          border: unset;
+          box-shadow: unset;
+          padding: 0 0 0 24px;
+        }
+
         &:hover {
           visibility: visible;
           opacity: 1;
@@ -101,6 +120,10 @@
           cursor: pointer;
           font-size: 16px;
           font-weight: 500;
+
+          @include sm {
+            font-size: 14px;
+          }
 
           &:hover {
             color: $primary;
